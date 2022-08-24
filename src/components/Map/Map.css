@@ -1,0 +1,10 @@
+.container-map{
+    margin: 15px 15px;
+    padding: 8px ;
+
+    height: 250px;
+    max-width: 85%;
+
+    border: 2px solid black;
+    border-radius: 15px;
+}

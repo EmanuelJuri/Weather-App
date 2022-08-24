@@ -1,0 +1,39 @@
+.container-nav{    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Jua', Courier, monospace;
+    background: linear-gradient(90deg, #2193B0 0%, rgba(94, 200, 225, 0) 98.93%);
+    
+    /* border: 2px solid green; */
+}
+
+.logo-nav{    
+    display: flex;
+    align-items: center;
+    
+    /* border: 1px solid blue; */
+}
+
+.logo{    
+    width: 50px;
+    height: 50px;
+    padding-left: 10px;
+    /* border: 1px solid blue; */
+}
+
+.name-nav{
+    font-size: 20px;
+    font-weight: bold;    
+    padding-left: 10px;
+    
+    /* border: 1px solid salmon; */
+}
+
+.menu{
+    width: 60%;
+    height: 60%; 
+    /* margin: 0 10px 0 0; */
+
+    /* border: 1px solid slateblue; */
+}
