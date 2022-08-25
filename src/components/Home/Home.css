@@ -1,6 +1,6 @@
 .container{
     background: rgba(162, 210, 217, 0.64);
-    height: 150vh;
+    height: 170vh;
     margin: 0;
     padding: 0;    
 
@@ -20,4 +20,25 @@
     
     border: 2px solid black;
     border-radius: 15px;    
+}
+
+@media(min-width: 600px){
+    .mobile{        
+        display: none;
+    }
+
+}
+
+@media(min-width: 421px){
+    .container{        
+        height: 100vh;
+    }
+
+    .block-card{
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-evenly;
+        
+        /* border: 1px solid red; */
+    }
 }

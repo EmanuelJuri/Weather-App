@@ -18,7 +18,7 @@
     /* border: 2px solid green; */
 }
 
-.name-city{    
+.title-column .name-city{    
     padding-left: 15px;
     font-size: 40px;
     /* border: 1px solid slateblue; */
@@ -27,6 +27,7 @@
 .title-column .description{
     font-size: 28px;
     padding-left: 15px;
+    -webkit-text-stroke: 0.8px black;
     /* border: 1px solid red; */
 }
 

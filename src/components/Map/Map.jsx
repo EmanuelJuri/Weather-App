@@ -2,15 +2,10 @@ import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
 
 import './Map.css'
-// import dotenv from "dotenv";
-// dotenv.config();
-// console.log('###.env###', process.env)
 
-// const {ApiKey}= process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
-const ApiKey='AIzaSyB_HGe1eoDgprslugzmHxUUj8t_jOZrqcM'
+const apiKey= process.env.REACT_APP_NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
 
-function Maps({lat, lng}) {
-
+function Maps({lat, lng}) {    
     const center = {
       lat,
       lng
@@ -18,7 +13,7 @@ function Maps({lat, lng}) {
 
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: ApiKey
+    googleMapsApiKey: apiKey
   })
 
   const [map, setMap] = React.useState(null)

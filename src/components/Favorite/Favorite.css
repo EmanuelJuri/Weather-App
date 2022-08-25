@@ -10,7 +10,7 @@
     border-radius: 15px;  
 }
 
-.card-favorite{    
+.card-favorite{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,4 +52,16 @@
     margin: 5px 0;
     /* font-size: 25px; */
 
+}
+
+@media(min-width: 421px){
+    .container-favorite{
+        justify-content: flex-start;
+        margin: 0 auto;
+        border: none;
+    }
+    .card-favorite{
+        width: 10%;
+        margin: 5px 12px;       
+    }
 }

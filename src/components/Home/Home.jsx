@@ -16,18 +16,21 @@ import './Home.css'
 export default function Home(){
     const dispatch = useDispatch()
     const city = useSelector(state => state.city)
-    const favorites = useSelector(state => state.favorites)
+    const favorites = useSelector(state => state.favorites)    
     const {
         nameCity,
         code,
         mainTemp,
         description,
         fellsLike,
+        humidity,
+        pressure,
+        wind,
+        visibility,
         tempMin,
         tempMax,
         weather,
         img,
-        wind,
         cloudes,
         lat,
         lon,
@@ -44,8 +47,8 @@ export default function Home(){
     let dateTime = date.slice(0,(date.length-6))+' '+date.slice(-2).toLocaleLowerCase()
     // console.log('###dateTime###', dateTime)
 
-    console.log('###estado city###', city)
-    console.log('###estado favorites###', favorites)
+    // console.log('###estado city###', city)
+    // console.log('###estado favorites###', favorites)
 
     function handleAddFavorite(){
         if(Object.keys(favorites).length == 0){
@@ -64,9 +67,33 @@ export default function Home(){
         <div className="container">
             <Navbar/>
 
-            <Searchbar/>            
+            <div className="mobile">
+                <Searchbar/>
+            </div>
 
             <div className="block-card">
+                <div className="mobile">
+                    {
+                        id ? 
+                        <Card
+                            nameCity={nameCity}
+                            code={code}
+                            mainTemp={mainTemp}
+                            description={description}
+                            fellsLike={fellsLike}
+                            tempMin={tempMin}
+                            tempMax={tempMax}
+                            dateTime={dateTime}
+                            img={img}
+                            id={id}
+                            handleAddFavorite={handleAddFavorite}
+                        />
+                        :
+                        <img src={loading} alt="loading" className="loading"/>                    
+                    }
+                </div>
+
+                <div className="desketop">
                 {
                     id ? 
                     <Card
@@ -80,22 +107,28 @@ export default function Home(){
                         dateTime={dateTime}
                         img={img}
                         id={id}
-                        handleAddFavorite={handleAddFavorite}
+                        handleAddFavorite={handleAddFavorite}                        
+                        humidity={humidity}
+                        pressure={pressure}
+                        wind={wind}
+                        visibility={visibility}
                     />
                     :
                     <img src={loading} alt="loading" className="loading"/>                    
                 }
+                </div>
+                
+                <Maps
+                    lat={lat || -32.8891236342233}
+                    lng={lon || -68.84308599293053}
+                    />
             </div>
 
-
-            <Maps
-                lat={lat || -32.8891236342233}
-                lng={lon || -68.84308599293053}
-            />
-
             <Favorite/>
-
-            <Detail/>
+            
+            <div className="mobile">
+                <Detail/>
+            </div>
 
         </div>
     )

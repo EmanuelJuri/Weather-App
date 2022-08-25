@@ -4,14 +4,13 @@ export const GET_CITY = "GET_CITY";
 export const ADD_FAVORITE = 'ADD_FAVORITE';
 export const REMOVE_FAVORITE = 'REMOVE_FAVORITE';
 
-const {weather_API_key} = process.env;
-const apiKey = '4ae2636d8dfbdc3044bede63951a019b';
+const API_KEY = process.env.REACT_APP_API_KEY
 
 export function getCity(city) {
     // console.log('city action', city)
     return async function (dispatch) {
       const res = await axios.get(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`,    
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`,    
       );
     //   console.log("esto es la res paises", res.data);
       
@@ -29,7 +28,7 @@ export function getCity(city) {
             description : res.data.weather[0].description,
             img: res.data.weather[0].icon,
             wind: res.data.wind.speed,
-            visibility: res.data.visibility,
+            visibility: Math.round(res.data.visibility),
             clouds: res.data.clouds.all,
             id: res.data.id,
             lat: res.data.coord.lat,

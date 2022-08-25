@@ -7,7 +7,8 @@ import add from '../../assets/add-favorite.svg';
 import iconWeather from '../../assets/icon-weather.svg'
 
 export default function Card({nameCity, code, mainTemp,
-    description, fellsLike, tempMin, tempMax, dateTime, img, id, handleAddFavorite}){
+    description, fellsLike, tempMin, tempMax, dateTime, img, id, handleAddFavorite, 
+    humidity, pressure, wind, visibility}){
 
     return(
         <div className="container-card">
@@ -38,13 +39,24 @@ export default function Card({nameCity, code, mainTemp,
                             <p className="description">{description}</p>
                             <p className="feels-like">Feels like: {fellsLike}ºC</p>
                             <div className="temp-min-max">
-                            <span><p className="temp-min">{tempMin}ºC</p>min</span>
-                            <p className="temp-min">-</p>
-                            <span><p className="temp-max">{tempMax}ºC</p>max</span>
+                                <span><p className="temp-min">{tempMin}ºC</p>min</span>
+                                <p className="temp-min">-</p>
+                                <span><p className="temp-max">{tempMax}ºC</p>max</span>
                             </div>
                         </div>
                         <div></div>
                         <div></div>
+                    </div>
+                </div>
+                <div className="desketop group">
+                    <div className="desketop properties">
+                        {/* <p className="details">Feels like: {fellsLike}ºC</p> */}
+                        <p className="details">Humidity: {humidity} %</p>
+                        <p className="details">Pressure: {pressure} hPa</p>
+                    </div>
+                    <div className="desketop properties">
+                        <p className="details">Wind: {wind} m/s</p>
+                        <p className="details">Visibility: {(visibility)/1000} km</p>
                     </div>
                 </div>
             </div>

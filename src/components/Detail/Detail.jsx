@@ -11,7 +11,7 @@ export default function Detail (){
         <div className="container-detail">
             <div className="card-detail">
                 <div className="title-column">
-                    <p className="name-city">{city.nameCity}</p>
+                    <p className="name-city">{city.nameCity}, {city.code}</p>
                     <p className="description">{city.description}</p>
                 </div>
                 <div className="temp-group">

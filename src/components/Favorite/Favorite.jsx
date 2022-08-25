@@ -23,19 +23,18 @@ export default function Favorite(){
     }
 
     return(
-        <div className="container-favorite">
+        <div className={favorites.length > 0 ? "container-favorite" : 'container-fav'}>
             {
                 favorites ?
                     (favorites.map(el => 
                         {
                             return(
-                                <div className="card-favorite" key={el.id}>
+                                <div className="card-favorite" key={el.id} onClick={()=>handleShow(el.nameCity)}>
                                     <p className="name-city">{el.nameCity}</p>
                                     <p className="temp-currently">{el.mainTemp}ºC</p>                
                                     <img src={`http://openweathermap.org/img/wn/${el.img}@2x.png`}
                                         alt="icon-weather"
-                                        className="icon-weather-f"
-                                        onClick={()=>handleShow(el.nameCity)}
+                                        className="icon-weather-f"                                        
                                     />
                                     <button
                                         className="btn-remove" 
