@@ -2,23 +2,13 @@
     background: linear-gradient(72.7deg, #2980B9 0.86%, #6DD5FA 49.84%, rgba(252, 252, 252, 0.93) 98.83%);    
     overflow: auto;
     margin: 0;    
-    padding: 0;    
-
-    /* border: 2px solid red; */
-}
-
-.block-card{
-
-    /* border: 1px solid red; */
+    padding: 0;
 }
 
 .loading{    
     margin: 0 15px;
-    /* padding: 8px ; */
     max-width: 89%;
     height: 280px;
-    
-    /* border: 2px solid black; */
     border-radius: 15px;    
 }
 
@@ -26,7 +16,6 @@
     display: block;
     margin: 40px 0;
     text-align: center;
-    /* border: 1px solid red; */
 }
 
 .img-back-top{
@@ -34,6 +23,7 @@
     height: 50px;
 }
 
+/* --->desketop<--- */
 @media(min-width: 600px){
     .mobile{        
         display: none;
@@ -47,12 +37,9 @@
         height: 100vh;
         overflow: auto;
     }
-
     .block-card{
         margin: 20px 0;
         display: flex;
         justify-content: space-evenly;
-        
-        /* border: 1px solid red; */
     }
 }

@@ -6,7 +6,7 @@ import MenuBurger from './Menuburger'
 import Searchbar from '../Searchbar/Searchbar';
 
 import './Navbar.css';
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/icon.svg'
 
 export default function Navbar(){
     const [clicked, setClicked] = (useState(false))

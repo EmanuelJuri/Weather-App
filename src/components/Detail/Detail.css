@@ -1,36 +1,31 @@
+*{
+    margin: 0;
+}
+
 .container-detail{
     margin: 20px auto;
     padding: 8px ;
     max-width: 85%;
-    box-shadow: -5px 5px 5px 4px rgba(0, 0, 0, 0.25);
-    /* border: 2px solid black; */
+    box-shadow: -5px 5px 5px 4px rgba(0, 0, 0, 0.25);    
     border-radius: 15px;
-}
-
-*{
-    margin: 0;
 }
 
 .card-detail{
     display: flex;
     flex-direction: column;
     font-family: 'Jua', Courier, monospace;
-    
-    /* border: 2px solid green; */
 }
 
 .title-column .name-city{    
     text-align: start;
     padding-left: 15px;
     font-size: 40px;
-    /* border: 1px solid slateblue; */
 }
 
 .title-column .description{
     font-size: 28px;
     padding-left: 15px;
-    -webkit-text-stroke: 0.8px black;
-    /* border: 1px solid red; */
+    -webkit-text-stroke: 0.8px black;    
 }
 
 .temp-group{
@@ -38,28 +33,17 @@
     justify-content: center;
 }
 
-.temp-group .icon-weather{
-        
-/* border: 1px solid black; */
-}
-
 .temperature{
     font-size: 45px;
-
-    /* border: 1px solid blue; */
 }
 
 .details-group{
     display: flex;
     flex-direction: column;
     align-items: center;
-
-    /* border: 1px solid red; */
 }
 
 .details{
     width: 70%;
     font-size: 20px;
-    
-    /* border: 1px solid darkmagenta; */
 }

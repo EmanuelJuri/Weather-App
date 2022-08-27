@@ -8,7 +8,7 @@ import { Route, Routes, BrowserRouter } from 'react-router-dom';
 
 import store from './store/index';
 import Home from './components/Home/Home';
-import About from './About/About';
+import About from './components/About/About';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

@@ -16,15 +16,13 @@ export default function rootReducer(state=initialState, action){
             }
         case ADD_FAVORITE:
             return{
-                ...state,
-                // favorites: [...state.favorites, action.payload]
+                ...state,                
                 favorites: state.favorites.concat(action.payload)
             }
         case REMOVE_FAVORITE:            
             return{
                 ...state,
                 favorites: state.favorites.filter(city => city.id !== action.id)
-                // detail: action.id
             }
         default: return {...state};
     }

@@ -2,7 +2,6 @@
     display: flex;
     justify-content: center;    
     padding: 20px 0;
-    /* border: 1px solid black;     */
 }
 
 .group-search{
@@ -13,7 +12,6 @@
     padding: 3px 15px;
     border-radius: 20px;
     background-color: white;
-    /* border: 1px solid green; */
 }
 
 .input_search{
@@ -21,7 +19,6 @@
     padding: 0 10px 0 5px ;
     font-size: 18px;
     width: 280px;
-    /* font-weight: bold; */
     border: none;
     outline: none;
     border-radius: 10px;    

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import swal from "sweetalert";
 
@@ -9,15 +9,14 @@ import Maps from '../Map/Map';
 import Favorite from '../Favorite/Favorite';
 import Detail from "../Detail/Detail";
 
-import {getCity, addFavorite, removeFavorite} from '../../actions/index'
+import {getCity, addFavorite} from '../../actions/index'
 import loading from '../../assets/weather.gif'
 import top from '../../assets/chevron-top.svg'
 
 import './Home.css'
 
 export default function Home(){
-    const dispatch = useDispatch()
-    const city = useSelector(state => state.city)
+    const dispatch = useDispatch()    
     const favorites = useSelector(state => state.favorites)    
     const {
         nameCity,
@@ -30,10 +29,8 @@ export default function Home(){
         wind,
         visibility,
         tempMin,
-        tempMax,
-        weather,
-        img,
-        cloudes,
+        tempMax,        
+        img,        
         lat,
         lon,
         id
@@ -41,14 +38,11 @@ export default function Home(){
 
     if(!id) dispatch(getCity('Mendoza'))
     
-    //---Obj Date--------------------------------------------------------
+    //------<Obj Date>------
     const options = { month: 'short', day: 'numeric' };
     let date = new Date().toLocaleTimeString('en', options)
     let dateTime = date.slice(0,(date.length-6))+' '+date.slice(-2).toLocaleLowerCase()
     
-    console.log('###estado city###', nameCity)
-    console.log('###estado favorites###', favorites)
-
     function handleAddFavorite(){        
         if(favorites.map(el => el.nameCity === nameCity).includes(true)) return swal({title: "Is already in favorites"});
         dispatch(addFavorite(nameCity, mainTemp, img, id)) 
@@ -57,11 +51,9 @@ export default function Home(){
     return(
         <div className="container" id="home">
             <Navbar/>
-
             <div className="mobile">
                 <Searchbar/>
             </div>
-
             <div className="block-card">
                 <div className="mobile">
                     {
@@ -83,7 +75,6 @@ export default function Home(){
                         <img src={loading} alt="loading" className="loading"/>                    
                     }
                 </div>
-
                 <div className="desketop">
                 {
                     id ? 
@@ -107,26 +98,21 @@ export default function Home(){
                     :
                     <img src={loading} alt="loading" className="loading"/>                    
                 }
-                </div>
-                
+                </div>                
                 <Maps
                     lat={lat || -32.8891236342233}
                     lng={lon || -68.84308599293053}
-                    />
+                />
             </div>
-
             <div className="favorites">
                 <Favorite/>
-            </div>
-            
+            </div>            
             <div className="mobile">
                 <Detail/>
             </div>
-
             <a href="#home" className="back-top mobile">
                 <img src={top} alt="top" className="img-back-top"/>
             </a>
-
         </div>
     )
 };

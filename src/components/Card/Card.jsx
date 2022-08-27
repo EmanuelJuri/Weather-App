@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
 
 import './Card.css'
-// import flags from '../../assets/flags.png';
 import add from '../../assets/add-favorite.svg';
-import iconWeather from '../../assets/icon-weather.svg'
 
 export default function Card({nameCity, code, mainTemp,
     description, fellsLike, tempMin, tempMax, dateTime, img, id, handleAddFavorite, 
@@ -16,22 +13,17 @@ export default function Card({nameCity, code, mainTemp,
                 <div className="container-name">
                     <div className="row-location">
                         <h1 className= {nameCity&&nameCity.length >= 10 ? 'title-small' : 'title'}>{nameCity}<span className="code-desk">{`, ${code}`}</span></h1>
-
-                        <img src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${code}.svg`}
+                        <img src={code !== undefined ? `http://purecatamphetamine.github.io/country-flag-icons/3x2/${code}.svg` : null}
                             alt="flag"
                             className="flags"
                         />
-                        
-
                         <img onClick={e=>handleAddFavorite(e)} src={add} alt="add" className="add-favorite"/>
-
                     </div>
                     <h3 className="date">{dateTime}</h3>
                 </div>
                 <div className="container-temperature">
                     <div className="temperature">                        
-                        <p className="main-temperature">{mainTemp}ºC</p>                        
-                        {/* <img src={iconWeather} alt="icon-weather" className="icon-weather"/> */}
+                        <p className="main-temperature">{mainTemp}ºC</p>
                         <img className="icon-weather" src={`http://openweathermap.org/img/wn/${img}@2x.png`} alt="icon-weather" />                        
                     </div>
                     <div className="container-extends">
@@ -49,8 +41,7 @@ export default function Card({nameCity, code, mainTemp,
                     </div>
                 </div>
                 <div className="desketop group">
-                    <div className="desketop properties">
-                        {/* <p className="details">Feels like: {fellsLike}ºC</p> */}
+                    <div className="desketop properties">                        
                         <p className="details">Humidity: {humidity} %</p>
                         <p className="details">Pressure: {pressure} hPa</p>
                     </div>

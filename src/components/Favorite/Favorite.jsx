@@ -1,18 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {getCity, removeFavorite} from '../../actions/index'
 import './Favorite.css';
-import iconWeather from '../../assets/icon-weather.svg'
-import { useEffect } from "react";
 
 export default function Favorite(){
     const dispatch = useDispatch()
-    const favorites = useSelector(state => state.favorites)
-    const detail = useSelector(state => state.detail)
-        
-    // console.log('Favorites', favorites.length)    
-    // console.log('detail', detail)
+    const favorites = useSelector(state => state.favorites)    
 
     function handleShow (nameCity){
         dispatch(getCity(nameCity))        

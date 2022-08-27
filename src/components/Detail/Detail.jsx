@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 
 import './Detail.css'
 
-export default function Detail (){
-    const dispatch = useDispatch()
+export default function Detail (){    
     const city = useSelector(state => state.city)
 
     return(
