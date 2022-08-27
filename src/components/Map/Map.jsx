@@ -32,9 +32,9 @@ function Maps({lat, lng}) {
       <GoogleMap
         // mapContainerStyle={containerStyle}
         mapContainerClassName="container-map"
-        zoom={10}
+        zoom={11}
         center={center}
-        onLoad={onLoad}
+        // onLoad={onLoad}
         onUnmount={onUnmount}
       >
         { /* Child components, such as markers, info windows, etc. */ }

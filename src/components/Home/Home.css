@@ -1,7 +1,7 @@
-.container{
-    background: rgba(162, 210, 217, 0.64);
-    height: 170vh;
-    margin: 0;
+.container{    
+    background: linear-gradient(72.7deg, #2980B9 0.86%, #6DD5FA 49.84%, rgba(252, 252, 252, 0.93) 98.83%);    
+    overflow: auto;
+    margin: 0;    
     padding: 0;    
 
     /* border: 2px solid red; */
@@ -18,8 +18,20 @@
     max-width: 89%;
     height: 280px;
     
-    border: 2px solid black;
+    /* border: 2px solid black; */
     border-radius: 15px;    
+}
+
+.back-top{
+    display: block;
+    margin: 40px 0;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.img-back-top{
+    width: 50px;
+    height: 50px;
 }
 
 @media(min-width: 600px){
@@ -29,9 +41,11 @@
 
 }
 
+/* --->desketop<--- */
 @media(min-width: 421px){
     .container{        
         height: 100vh;
+        overflow: auto;
     }
 
     .block-card{

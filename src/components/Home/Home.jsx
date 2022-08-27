@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import swal from "sweetalert";
 
 import Card from '../Card/Card';
 import Navbar from '../Navbar/Navbar';
@@ -10,6 +11,7 @@ import Detail from "../Detail/Detail";
 
 import {getCity, addFavorite, removeFavorite} from '../../actions/index'
 import loading from '../../assets/weather.gif'
+import top from '../../assets/chevron-top.svg'
 
 import './Home.css'
 
@@ -39,32 +41,21 @@ export default function Home(){
 
     if(!id) dispatch(getCity('Mendoza'))
     
-    // console.log('INFOOOO', img)
-
     //---Obj Date--------------------------------------------------------
     const options = { month: 'short', day: 'numeric' };
     let date = new Date().toLocaleTimeString('en', options)
     let dateTime = date.slice(0,(date.length-6))+' '+date.slice(-2).toLocaleLowerCase()
-    // console.log('###dateTime###', dateTime)
+    
+    console.log('###estado city###', nameCity)
+    console.log('###estado favorites###', favorites)
 
-    // console.log('###estado city###', city)
-    // console.log('###estado favorites###', favorites)
-
-    function handleAddFavorite(){
-        if(Object.keys(favorites).length == 0){
-            dispatch(addFavorite(nameCity, mainTemp, img, id))
-        // }else if(favorites.map(el => el.nameCity === city.nameCity)) {
-        }else if(favorites.includes (city.nameCity)) {
-            console.log('MATCH favorites', favorites[0].nameCity)    
-            console.log('MATCH city', city.nameCity)
-            return alert ("Is already in favorites")
-        }else{
-            dispatch(addFavorite(nameCity, mainTemp, img, id))
-        }
+    function handleAddFavorite(){        
+        if(favorites.map(el => el.nameCity === nameCity).includes(true)) return swal({title: "Is already in favorites"});
+        dispatch(addFavorite(nameCity, mainTemp, img, id)) 
     }
 
     return(
-        <div className="container">
+        <div className="container" id="home">
             <Navbar/>
 
             <div className="mobile">
@@ -124,11 +115,17 @@ export default function Home(){
                     />
             </div>
 
-            <Favorite/>
+            <div className="favorites">
+                <Favorite/>
+            </div>
             
             <div className="mobile">
                 <Detail/>
             </div>
+
+            <a href="#home" className="back-top mobile">
+                <img src={top} alt="top" className="img-back-top"/>
+            </a>
 
         </div>
     )

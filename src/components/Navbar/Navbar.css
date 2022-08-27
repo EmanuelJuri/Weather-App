@@ -4,47 +4,36 @@
     align-items: center;
     font-family: 'Jua', Courier, monospace;
     background: linear-gradient(90deg, #2193B0 0%, rgba(94, 200, 225, 0) 98.93%);
-    
-    /* border: 2px solid green; */
 }
 
 .logo-nav{    
     display: flex;
     align-items: center;
-    
-    /* border: 1px solid blue; */
 }
 
 .logo{    
     width: 50px;
     height: 50px;
     padding: 10px 0 10px 10px;
-    /* border: 1px solid blue; */
 }
 
 .name-nav{
     font-size: 20px;
     font-weight: bold;    
     padding-left: 10px;
-    
-    /* border: 1px solid salmon; */
 }
 
 .menu{
     width: 60%;
-    height: 60%; 
-    /* margin: 0 10px 0 0; */
-
-    /* border: 1px solid slateblue; */
+    height: 60%;
 }
 
 .desketop{
     display: none;
 }
 
-/* menu burger */
-.container-burger{
-    /* display: none; */    
+/* ---<menu burger>--- */
+.container-burger{    
     position: relative;
     z-index: 20;
 }
@@ -67,7 +56,6 @@
     text-decoration: none;
 }
 
-
 .menu-links.active {    
     width: 100%;
     display: block;
@@ -81,16 +69,13 @@
 }
 
 .menu-links.active a{
-    /* background-color: rgb(139, 130, 130); */
-    /* color: red; */
     margin: 20px;
 }
 
-/* div background */
+/* ---<div background>--- */
 .initial{
     position: absolute;    
     background: linear-gradient(90deg, #56CCF2 0%, #2F80ED 100%);
-    background: linear-gradient(90deg, #004680 0%, #4484BA 100%);
     top: -1500px;
     left: -1500px;
     width: 100%;
@@ -107,6 +92,7 @@
     height: 100%;    
 }
 
+/* ---<desketop>--- */
 @media(min-width: 600px) {
     .desketop{
         display: block;
@@ -117,45 +103,32 @@
     .name-nav{
         font-size: 30px;
     }
-
     .logo{    
         width: 60px;
         height: 60px;
         padding: 10px 0 10px 10px;        
     }
-
     .menu-links{
         position: initial;       
         display: block;
-                
-        /* border: 1px solid green; */
-
     }
-    .menu-links a{
-
-    }
-
     .menu-links a{
         display: inline;
         text-decoration: none;
         padding: 0 25px;
-        color: black;
-        font-size: 20px;
-        
-        /* border: 1px solid red;         */
+        color: black;     
     }
-
     .hide-mobile .menu-links a:hover{
         color: #2294b1;
     }
 
-    /* menu burger */
+    /* ---<menu burger>--- */
     .container-burger{
         display: none;
     }
 }
 
-/* animation menu */
+/* ---<animation menu>--- */
 .nav-icon-5{
     width: 35px;
     height: 30px;

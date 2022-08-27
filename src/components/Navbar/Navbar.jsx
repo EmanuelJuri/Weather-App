@@ -1,4 +1,6 @@
 import React, {useState} from "react";
+import {Link} from 'react-router-dom';
+import swal from "sweetalert";
 
 import MenuBurger from './Menuburger'
 import Searchbar from '../Searchbar/Searchbar';
@@ -16,7 +18,9 @@ export default function Navbar(){
     return(
         <div className="container-nav">
             <div className="logo-nav">
-                <img src={logo} alt="logo" className="logo"/>
+                <a href="">
+                    <img src={logo} alt="logo" className="logo"/>
+                </a>
                 <p className="name-nav">The Weather App</p>
             </div>
             <div className="desketop">
@@ -24,9 +28,24 @@ export default function Navbar(){
             </div>
             <div className="hide-mobile">
                 <div className={`menu-links ${clicked ? 'active' : ''}`}>
-                    <a href="https://github.com/EmanuelJuri">About</a>
+                    <Link to={'/about'}>About</Link>                    
                     <a href="">Reload</a>
-                    <a /* href="" */ onClick={()=>alert('Que onda wey')}>Info</a>                    
+                    <a onClick={()=>
+                        swal({
+                            title: "API info",
+                            text: "information provided by openweathermap.org",                            
+                            buttons: {
+                                cancel: true,
+                                Go: true,
+                              },
+                          })
+                          .then(Go => {
+                            if (Go) {                 
+                                window.location.href = 'https://openweathermap.org/'                            
+                            }
+                          })
+                        }
+                    >Info</a>                    
                 </div>
                 <MenuBurger
                     clicked={clicked}

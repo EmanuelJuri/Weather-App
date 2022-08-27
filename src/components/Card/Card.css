@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
-.container-card{
-    margin: 0 15px;
+.container-card{    
+    margin: 0 auto;
     padding: 8px ;
     max-width: 85%;
-    border: 2px solid black;
+    background: linear-gradient(90deg, #2193B0 0%, #6DD5ED 100%);    
+    box-shadow: -5px 5px 5px 4px rgba(0, 0, 0, 0.25);
+    /* border: 2px solid black; */
     border-radius: 15px;
 }
 
@@ -26,7 +28,7 @@
 .row-location{
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: center;    
     /* border: 1px solid green; */
 }
 
@@ -41,6 +43,10 @@
     font-size: 25px;
 }
 
+.code-desk{        
+    display: none;
+}
+
 .flags{    
     max-width: 20%;
     /* margin: 0 10px 0 0; */
@@ -51,6 +57,11 @@
 .add-favorite{
     max-width: 10%;
     /* border: 1px solid red; */
+    transition: .2s;
+}
+
+.add-favorite:hover{
+    transform: scale(1.2);
 }
 
 .date{
@@ -144,15 +155,33 @@
 }
 
 @media(min-width: 421px){
+    .container-card{
+        margin: 0 15px;
+        padding: 8px ;
+        min-width: 390px;
+        box-shadow: -20px 10px 10px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 15px;
+        /* box-sizing: content-box */
+    }
     .title{
-        margin: 0 10px 0 0;
-        font-size: 50px;
-        /* border: 1px solid slateblue; */
+        display:flex ;
+        /* justify-content: space-between; */
+        /* margin: 0 50px 0 0; */        
+        font-size: 40px;
+        /* border: 1px solid blue; */
     }    
-    .title-small{
-        
-        font-size: 30px;
+    .title-small{        
+        font-size: 25px;
         /* border: 1px solid slateblue; */
+    }
+    .title-small .code-desk{    
+        /* color: #CB4B03;     */
+        font-size: 25px;        
+    }
+    .code-desk{
+        display: inline;        
+        /* font-size: 40px; */
+        /* border: 1px solid red; */
     }    
     .flags{
         margin-right: 5px;

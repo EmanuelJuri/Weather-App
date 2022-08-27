@@ -25,12 +25,6 @@ export default function Detail (){
                     <p className="details">Wind: {city.wind} m/s</p>
                     <p className="details">Visibility: {(city.visibility)/1000} km</p>
                 </div>
-                <div className="container-btn">
-                    <button
-                        className="btn"
-                        onClick={console.log('vampos hacia arribaaaa')}
-                    >Up Top</button>
-                </div>
             </div>
         </div>
     )

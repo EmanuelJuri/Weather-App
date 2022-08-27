@@ -15,7 +15,7 @@ export default function Card({nameCity, code, mainTemp,
             <div className="container-weather">
                 <div className="container-name">
                     <div className="row-location">
-                        <h1 className= {nameCity&&nameCity.length > 12 ? 'title-small' : 'title'}>{nameCity}</h1>
+                        <h1 className= {nameCity&&nameCity.length >= 10 ? 'title-small' : 'title'}>{nameCity}<span className="code-desk">{`, ${code}`}</span></h1>
 
                         <img src={`http://purecatamphetamine.github.io/country-flag-icons/3x2/${code}.svg`}
                             alt="flag"
